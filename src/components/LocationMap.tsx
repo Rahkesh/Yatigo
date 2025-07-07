@@ -31,15 +31,15 @@ const LocationMap = () => {
           {/* Map Placeholder */}
           <div className="lg:col-span-2">
             <Card className="h-96 border-0 shadow-xl overflow-hidden">
-              <div className="relative h-full bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center">
+              <div className="relative h-full">
                 <img 
-                  src="/api/placeholder/800/400" 
-                  alt="Interactive Map" 
+                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Interactive Map - Yatigo Locker Locations Across India" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-blue-600/10"></div>
+                <div className="absolute inset-0 bg-blue-600/20"></div>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-xl p-6 text-center">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 text-center">
                     <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Interactive Map</h3>
                     <p className="text-gray-600">Find the nearest Yatigo locker location</p>

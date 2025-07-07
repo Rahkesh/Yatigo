@@ -43,13 +43,13 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* India Map Illustration */}
-        <div className="relative max-w-4xl mx-auto">
+        {/* Hero Image Section */}
+        <div className="relative max-w-5xl mx-auto">
           <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100">
             <img 
-              src="/api/placeholder/800/400" 
-              alt="Yatigo Smart Locker Network Across India" 
-              className="w-full h-auto rounded-xl"
+              src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              alt="Smart Locker Technology - Secure Digital Storage Solutions" 
+              className="w-full h-auto rounded-xl shadow-lg"
             />
             
             {/* Status indicators */}

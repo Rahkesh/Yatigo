@@ -12,7 +12,7 @@ const Products = () => {
       description: 'Secure storage for smartphones, tablets, and personal electronics with smart charging capabilities.',
       icon: Smartphone,
       features: ['Smart Charging', 'Biometric Access', 'Real-time Monitoring'],
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     },
     {
       id: 2,
@@ -20,7 +20,7 @@ const Products = () => {
       description: 'Spacious storage for luggage, bags, and larger personal belongings with advanced security.',
       icon: ShoppingBag,
       features: ['Multiple Sizes', 'CCTV Surveillance', '24/7 Access'],
-      image: '/api/placeholder/400/300',
+      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     }
   ];
 
@@ -38,12 +38,12 @@ const Products = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {products.map((product) => (
-            <Card key={product.id} className="group hover:shadow-lg transition-all duration-300 border-0 bg-white rounded-2xl overflow-hidden">
+            <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-2xl overflow-hidden">
               <div className="relative">
                 <img 
                   src={product.image} 
                   alt={product.title}
-                  className="w-full h-64 object-cover"
+                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
                   <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">

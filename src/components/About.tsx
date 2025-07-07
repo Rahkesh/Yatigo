@@ -69,8 +69,8 @@ const About = () => {
           <div className="relative animate-fade-in delay-300">
             <div className="relative bg-gradient-to-br from-gray-50 to-gray-100 rounded-3xl p-8">
               <img 
-                src="/api/placeholder/600/500" 
-                alt="Yatigo Smart Lockers" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" 
+                alt="Yatigo Smart Lockers - Secure Digital Storage Solutions" 
                 className="w-full h-auto rounded-2xl shadow-2xl"
               />
               
