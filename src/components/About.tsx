@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Shield, Lock, Smartphone, Users } from 'lucide-react';
+import { Shield, Lock, Smartphone, Users, MapPin } from 'lucide-react';
 
 const About = () => {
   const stats = [
-    { number: '100+', label: 'Locations', icon: Map },
+    { number: '100+', label: 'Locations', icon: MapPin },
     { number: '50K+', label: 'Happy Users', icon: Users },
     { number: '99.9%', label: 'Uptime', icon: Shield },
     { number: '24/7', label: 'Support', icon: Lock }
