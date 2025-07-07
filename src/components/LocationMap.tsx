@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { MapPin, Navigation, Phone } from 'lucide-react';
+import { openExternalLink, initiateCall } from '@/utils/scrollUtils';
 
 const LocationMap = () => {
   const locations = [
@@ -11,6 +11,19 @@ const LocationMap = () => {
     { id: 3, name: 'Bangalore Tech Hub', address: 'Electronic City, Bangalore', status: 'Active', lockers: 32 },
     { id: 4, name: 'Chennai Express', address: 'Central Railway Station, Chennai', status: 'Coming Soon', lockers: 20 }
   ];
+
+  const handleGetDirections = () => {
+    openExternalLink('https://maps.google.com/');
+  };
+
+  const handleVisitLocation = (locationName: string) => {
+    const query = encodeURIComponent(locationName);
+    openExternalLink(`https://maps.google.com/maps?q=${query}`);
+  };
+
+  const handleContactUs = () => {
+    initiateCall('+919876543210');
+  };
 
   return (
     <section id="locations" className="py-20 bg-white">
@@ -43,7 +56,7 @@ const LocationMap = () => {
                     <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
                     <h3 className="text-xl font-bold text-gray-900 mb-2">Interactive Map</h3>
                     <p className="text-gray-600">Find the nearest Yatigo locker location</p>
-                    <Button className="mt-4 bg-blue-600 hover:bg-blue-700">
+                    <Button onClick={handleGetDirections} className="mt-4 bg-blue-600 hover:bg-blue-700">
                       <Navigation className="w-4 h-4 mr-2" />
                       Get Directions
                     </Button>
@@ -77,7 +90,12 @@ const LocationMap = () => {
                     <div className="text-sm text-gray-500">
                       {location.lockers} Lockers Available
                     </div>
-                    <Button size="sm" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                    <Button 
+                      size="sm" 
+                      variant="outline" 
+                      onClick={() => handleVisitLocation(location.address)}
+                      className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                    >
                       <MapPin className="w-4 h-4 mr-1" />
                       Visit
                     </Button>
@@ -90,7 +108,11 @@ const LocationMap = () => {
               <CardContent className="p-6 text-center">
                 <h4 className="text-lg font-bold text-blue-700 mb-2">Request New Location</h4>
                 <p className="text-blue-600 text-sm mb-4">Don't see a location near you?</p>
-                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                <Button 
+                  variant="outline" 
+                  onClick={handleContactUs}
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
                   <Phone className="w-4 h-4 mr-2" />
                   Contact Us
                 </Button>

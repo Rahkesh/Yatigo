@@ -1,28 +1,47 @@
-
 import React from 'react';
 import { Shield, MapPin, Phone, Mail } from 'lucide-react';
+import { scrollToSection, initiateCall, initiateEmail, openExternalLink } from '@/utils/scrollUtils';
 
 const Footer = () => {
   const footerLinks = {
     Products: [
-      { name: 'Mobile Lockers', href: '#mobile-lockers' },
-      { name: 'Baggage Lockers', href: '#baggage-lockers' },
-      { name: 'Pricing', href: '#pricing' }
+      { name: 'Mobile Lockers', href: 'products' },
+      { name: 'Baggage Lockers', href: 'products' },
+      { name: 'Pricing', href: 'features' }
     ],
     Company: [
-      { name: 'Home', href: '#home' },
-      { name: 'About Us', href: '#about' },
-      { name: 'Locate Us', href: '#locations' }
+      { name: 'Home', href: 'hero' },
+      { name: 'About Us', href: 'about' },
+      { name: 'Locate Us', href: 'locations' }
     ],
     Support: [
-      { name: 'Contact Us', href: '#contact' },
-      { name: 'Help Center', href: '#help' },
-      { name: 'Privacy Policy', href: '#privacy' }
+      { name: 'Contact Us', href: 'contact' },
+      { name: 'Help Center', href: 'faq' },
+      { name: 'Privacy Policy', href: 'privacy' }
     ]
   };
 
+  const handleLinkClick = (href: string) => {
+    if (href === 'contact') {
+      initiateCall('+919876543210');
+    } else if (href === 'privacy') {
+      // For now, scroll to FAQ section as placeholder
+      scrollToSection('faq');
+    } else {
+      scrollToSection(href);
+    }
+  };
+
+  const handlePhoneClick = () => {
+    initiateCall('+919876543210');
+  };
+
+  const handleEmailClick = () => {
+    initiateEmail('hello@yatigo.in');
+  };
+
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer id="contact" className="bg-white border-t border-gray-200">
       <div className="container mx-auto px-6 py-16 max-w-6xl">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand Section */}
@@ -39,14 +58,20 @@ const Footer = () => {
             </p>
             
             <div className="space-y-3">
-              <div className="flex items-center space-x-3">
+              <button 
+                onClick={handlePhoneClick}
+                className="flex items-center space-x-3 hover:text-blue-600 transition-colors"
+              >
                 <Phone className="w-4 h-4 text-blue-600" />
                 <span className="text-gray-600 text-sm">+91 98765 43210</span>
-              </div>
-              <div className="flex items-center space-x-3">
+              </button>
+              <button 
+                onClick={handleEmailClick}
+                className="flex items-center space-x-3 hover:text-blue-600 transition-colors"
+              >
                 <Mail className="w-4 h-4 text-blue-600" />
                 <span className="text-gray-600 text-sm">hello@yatigo.in</span>
-              </div>
+              </button>
             </div>
           </div>
 
@@ -57,12 +82,12 @@ const Footer = () => {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link.name}>
-                    <a 
-                      href={link.href} 
-                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm"
+                    <button 
+                      onClick={() => handleLinkClick(link.href)}
+                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
                     >
                       {link.name}
-                    </a>
+                    </button>
                   </li>
                 ))}
               </ul>

@@ -1,8 +1,8 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Smartphone, ShoppingBag, ArrowRight, Shield } from 'lucide-react';
+import { scrollToSection } from '@/utils/scrollUtils';
 
 const Products = () => {
   const products = [
@@ -23,6 +23,14 @@ const Products = () => {
       image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
     }
   ];
+
+  const handleLearnMore = (productId: number) => {
+    if (productId === 1) {
+      scrollToSection('features');
+    } else {
+      scrollToSection('locations');
+    }
+  };
 
   return (
     <section id="products" className="py-20 bg-gray-50">
@@ -65,7 +73,10 @@ const Products = () => {
                   ))}
                 </div>
                 
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 group">
+                <Button 
+                  onClick={() => handleLearnMore(product.id)}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 group"
+                >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>

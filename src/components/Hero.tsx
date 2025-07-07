@@ -1,11 +1,23 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MapPin, Phone, ArrowRight } from 'lucide-react';
+import { scrollToSection, initiateCall } from '@/utils/scrollUtils';
 
 const Hero = () => {
+  const handleLocateUs = () => {
+    scrollToSection('locations');
+  };
+
+  const handleYatigoMap = () => {
+    scrollToSection('locations');
+  };
+
+  const handleContactUs = () => {
+    initiateCall('+919876543210');
+  };
+
   return (
-    <section className="relative bg-white pt-20 pb-16 overflow-hidden">
+    <section id="hero" className="relative bg-white pt-20 pb-16 overflow-hidden">
       {/* Clean background with subtle pattern */}
       <div className="absolute inset-0 bg-gradient-to-b from-blue-50/30 to-white"></div>
       
@@ -29,14 +41,28 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-xl">
+            <Button 
+              size="lg" 
+              onClick={handleLocateUs}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 text-lg rounded-xl"
+            >
               <MapPin className="mr-2 h-5 w-5" />
               Locate Us
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg rounded-xl">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={handleYatigoMap}
+              className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 px-8 py-4 text-lg rounded-xl"
+            >
               Yatigo Map
             </Button>
-            <Button size="lg" variant="outline" className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-xl">
+            <Button 
+              size="lg" 
+              variant="outline" 
+              onClick={handleContactUs}
+              className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-4 text-lg rounded-xl"
+            >
               <Phone className="mr-2 h-5 w-5" />
               Contact Us
             </Button>

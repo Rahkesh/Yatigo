@@ -2,18 +2,28 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Shield } from 'lucide-react';
+import { scrollToSection } from '@/utils/scrollUtils';
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Mobile Lockers', href: '#mobile-lockers' },
-    { name: 'Baggage Lockers', href: '#baggage-lockers' },
-    { name: 'Pricing', href: '#pricing' },
-    { name: 'Locate Us', href: '#locations' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Home', href: 'hero' },
+    { name: 'Mobile Lockers', href: 'products' },
+    { name: 'Baggage Lockers', href: 'products' },
+    { name: 'Pricing', href: 'features' },
+    { name: 'Locate Us', href: 'locations' },
+    { name: 'Contact', href: 'contact' },
   ];
+
+  const handleNavClick = (href: string) => {
+    scrollToSection(href);
+    setIsOpen(false);
+  };
+
+  const handleGetStarted = () => {
+    scrollToSection('products');
+  };
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -29,18 +39,21 @@ const Navigation = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.name}
-                href={link.href}
-                className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm"
+                onClick={() => handleNavClick(link.href)}
+                className="text-gray-600 hover:text-gray-900 font-medium transition-colors text-sm cursor-pointer"
               >
                 {link.name}
-              </a>
+              </button>
             ))}
           </div>
 
           <div className="hidden md:flex">
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6">
+            <Button 
+              onClick={handleGetStarted}
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6"
+            >
               Get Started
             </Button>
           </div>
@@ -59,17 +72,19 @@ const Navigation = () => {
           <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b border-gray-100 shadow-lg">
             <div className="px-6 py-4 space-y-4">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.name}
-                  href={link.href}
-                  className="block text-gray-600 hover:text-gray-900 font-medium py-2"
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
+                  className="block text-gray-600 hover:text-gray-900 font-medium py-2 w-full text-left"
                 >
                   {link.name}
-                </a>
+                </button>
               ))}
               <div className="pt-4 border-t border-gray-100">
-                <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-2">
+                <Button 
+                  onClick={handleGetStarted}
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-2"
+                >
                   Get Started
                 </Button>
               </div>
