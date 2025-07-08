@@ -74,8 +74,8 @@ const Hero = () => {
         <div className="relative max-w-5xl mx-auto">
           <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100">
             <img 
-              src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-              alt="Smart Locker System - Secure Digital Storage Solutions" 
+              src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+              alt="Smart Locker System - Digital Storage Lockers" 
               className="w-full h-auto rounded-xl shadow-lg"
             />
             

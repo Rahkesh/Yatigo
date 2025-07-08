@@ -17,9 +17,9 @@ const Products = () => {
       icon: Smartphone,
       features: ['Smart Charging', 'Biometric Access', 'Real-time Monitoring'],
       images: [
-        'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+        'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
       ],
       imageIndex: mobileImageIndex,
       setImageIndex: setMobileImageIndex
@@ -31,9 +31,9 @@ const Products = () => {
       icon: ShoppingBag,
       features: ['Multiple Sizes', 'CCTV Surveillance', '24/7 Access'],
       images: [
-        'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1565728744382-61accd4aa148?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+        'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
       ],
       imageIndex: baggageImageIndex,
       setImageIndex: setBaggageImageIndex
@@ -80,7 +80,7 @@ const Products = () => {
                 >
                   <img 
                     src={product.images[product.imageIndex]} 
-                    alt={`${product.title} - Image ${product.imageIndex + 1}`}
+                    alt={`${product.title} - Smart Locker System`}
                     className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                   

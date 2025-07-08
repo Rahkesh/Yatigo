@@ -39,8 +39,8 @@ const LocationMap = () => {
           <div className="relative">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <img 
-                src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Smart Locker Network Map - Yatigo Locations Across India" 
+                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Smart Locker Network - Storage Facility Locations" 
                 className="w-full h-80 object-cover rounded-xl"
               />
               

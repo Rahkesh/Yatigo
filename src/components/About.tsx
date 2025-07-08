@@ -59,8 +59,8 @@ const About = () => {
           <div className="relative">
             <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8">
               <img 
-                src="https://images.unsplash.com/photo-1565728744382-61accd4aa148?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                alt="Modern Smart Locker Facility" 
+                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Smart Locker Facility - Secure Storage Systems" 
                 className="w-full h-auto rounded-xl shadow-lg"
               />
             </div>
