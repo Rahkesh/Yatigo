@@ -1,123 +1,95 @@
+
 import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { MapPin, Navigation, Phone } from 'lucide-react';
-import { openExternalLink, initiateCall } from '@/utils/scrollUtils';
+import { MapPin, Navigation, ExternalLink } from 'lucide-react';
+import { openExternalLink } from '@/utils/scrollUtils';
 
 const LocationMap = () => {
-  const locations = [
-    { id: 1, name: 'Delhi Central', address: 'Connaught Place, New Delhi', status: 'Active', lockers: 24 },
-    { id: 2, name: 'Mumbai Gateway', address: 'Gateway of India, Mumbai', status: 'Active', lockers: 18 },
-    { id: 3, name: 'Bangalore Tech Hub', address: 'Electronic City, Bangalore', status: 'Active', lockers: 32 },
-    { id: 4, name: 'Chennai Express', address: 'Central Railway Station, Chennai', status: 'Coming Soon', lockers: 20 }
-  ];
+  const handleOpenGoogleMaps = () => {
+    openExternalLink('https://www.google.com/maps/search/yatigo+smart+lockers');
+  };
 
   const handleGetDirections = () => {
-    openExternalLink('https://maps.google.com/');
+    openExternalLink('https://maps.google.com/?q=smart+lockers+near+me');
   };
 
-  const handleVisitLocation = (locationName: string) => {
-    const query = encodeURIComponent(locationName);
-    openExternalLink(`https://maps.google.com/maps?q=${query}`);
-  };
-
-  const handleContactUs = () => {
-    initiateCall('+919876543210');
-  };
+  const locations = [
+    { city: 'Mumbai', count: '25+ Locations', status: 'Active' },
+    { city: 'Delhi', count: '20+ Locations', status: 'Active' },
+    { city: 'Bangalore', count: '18+ Locations', status: 'Active' },
+    { city: 'Chennai', count: '15+ Locations', status: 'Active' },
+    { city: 'Pune', count: '12+ Locations', status: 'Active' },
+    { city: 'Hyderabad', count: '10+ Locations', status: 'Active' }
+  ];
 
   return (
-    <section id="locations" className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+    <section id="locations" className="py-20 bg-gray-50">
+      <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-4">
-            Find Us Near You
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Interactive Locker Locations
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Find Yatigo Lockers Near You
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover Yatigo smart lockers across major cities in India
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            Our smart locker network spans across major cities in India, providing convenient and secure storage solutions
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8">
-          {/* Map Placeholder */}
-          <div className="lg:col-span-2">
-            <Card className="h-96 border-0 shadow-xl overflow-hidden">
-              <div className="relative h-full">
-                <img 
-                  src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Interactive Map - Yatigo Locker Locations Across India" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-blue-600/20"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 text-center">
-                    <MapPin className="w-12 h-12 text-blue-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Interactive Map</h3>
-                    <p className="text-gray-600">Find the nearest Yatigo locker location</p>
-                    <Button onClick={handleGetDirections} className="mt-4 bg-blue-600 hover:bg-blue-700">
-                      <Navigation className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </Button>
-                  </div>
-                </div>
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Map Image */}
+          <div className="relative">
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <img 
+                src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                alt="Smart Locker Network Map - Yatigo Locations Across India" 
+                className="w-full h-80 object-cover rounded-xl"
+              />
+              
+              {/* Interactive buttons overlay */}
+              <div className="absolute top-8 right-8 space-y-3">
+                <Button 
+                  onClick={handleOpenGoogleMaps}
+                  className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg"
+                >
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  View on Maps
+                </Button>
               </div>
-            </Card>
+            </div>
           </div>
 
           {/* Location List */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Available Locations</h3>
-            {locations.map((location) => (
-              <Card key={location.id} className="border border-gray-200 hover:shadow-lg transition-shadow duration-300">
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-4">
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-1">{location.name}</h4>
-                      <p className="text-gray-600 text-sm">{location.address}</p>
-                    </div>
-                    <div className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      location.status === 'Active' 
-                        ? 'bg-green-100 text-green-700' 
-                        : 'bg-yellow-100 text-yellow-700'
-                    }`}>
-                      {location.status}
-                    </div>
-                  </div>
-                  
+          <div className="space-y-6">
+            <div className="grid gap-4">
+              {locations.map((location, index) => (
+                <div key={index} className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between">
-                    <div className="text-sm text-gray-500">
-                      {location.lockers} Lockers Available
+                    <div className="flex items-center space-x-4">
+                      <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-gray-900">{location.city}</h3>
+                        <p className="text-gray-600">{location.count}</p>
+                      </div>
                     </div>
-                    <Button 
-                      size="sm" 
-                      variant="outline" 
-                      onClick={() => handleVisitLocation(location.address)}
-                      className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                    >
-                      <MapPin className="w-4 h-4 mr-1" />
-                      Visit
-                    </Button>
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                      <span className="text-sm text-green-600 font-medium">{location.status}</span>
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-            
-            <Card className="border-2 border-dashed border-blue-300 bg-blue-50/50">
-              <CardContent className="p-6 text-center">
-                <h4 className="text-lg font-bold text-blue-700 mb-2">Request New Location</h4>
-                <p className="text-blue-600 text-sm mb-4">Don't see a location near you?</p>
-                <Button 
-                  variant="outline" 
-                  onClick={handleContactUs}
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                >
-                  <Phone className="w-4 h-4 mr-2" />
-                  Contact Us
-                </Button>
-              </CardContent>
-            </Card>
+                </div>
+              ))}
+            </div>
+
+            <div className="pt-6 space-y-4">
+              <Button 
+                onClick={handleGetDirections}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3"
+              >
+                <Navigation className="mr-2 h-5 w-5" />
+                Get Directions to Nearest Locker
+              </Button>
+            </div>
           </div>
         </div>
       </div>

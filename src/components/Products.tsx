@@ -1,10 +1,14 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Smartphone, ShoppingBag, ArrowRight, Shield } from 'lucide-react';
+import { Smartphone, ShoppingBag, ArrowRight, Shield, ChevronLeft, ChevronRight } from 'lucide-react';
 import { scrollToSection } from '@/utils/scrollUtils';
 
 const Products = () => {
+  const [mobileImageIndex, setMobileImageIndex] = useState(0);
+  const [baggageImageIndex, setBaggageImageIndex] = useState(0);
+
   const products = [
     {
       id: 1,
@@ -12,7 +16,13 @@ const Products = () => {
       description: 'Secure storage for smartphones, tablets, and personal electronics with smart charging capabilities.',
       icon: Smartphone,
       features: ['Smart Charging', 'Biometric Access', 'Real-time Monitoring'],
-      image: 'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1556656793-08538906a9f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      ],
+      imageIndex: mobileImageIndex,
+      setImageIndex: setMobileImageIndex
     },
     {
       id: 2,
@@ -20,7 +30,13 @@ const Products = () => {
       description: 'Spacious storage for luggage, bags, and larger personal belongings with advanced security.',
       icon: ShoppingBag,
       features: ['Multiple Sizes', 'CCTV Surveillance', '24/7 Access'],
-      image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+      images: [
+        'https://images.unsplash.com/photo-1531297484001-80022131f5a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+        'https://images.unsplash.com/photo-1565728744382-61accd4aa148?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+      ],
+      imageIndex: baggageImageIndex,
+      setImageIndex: setBaggageImageIndex
     }
   ];
 
@@ -30,6 +46,16 @@ const Products = () => {
     } else {
       scrollToSection('locations');
     }
+  };
+
+  const nextImage = (product: any) => {
+    const nextIndex = (product.imageIndex + 1) % product.images.length;
+    product.setImageIndex(nextIndex);
+  };
+
+  const prevImage = (product: any) => {
+    const prevIndex = product.imageIndex === 0 ? product.images.length - 1 : product.imageIndex - 1;
+    product.setImageIndex(prevIndex);
   };
 
   return (
@@ -48,11 +74,54 @@ const Products = () => {
           {products.map((product) => (
             <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 border-0 bg-white rounded-2xl overflow-hidden">
               <div className="relative">
-                <img 
-                  src={product.image} 
-                  alt={product.title}
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                <div 
+                  className="relative overflow-hidden cursor-pointer"
+                  onMouseEnter={() => nextImage(product)}
+                >
+                  <img 
+                    src={product.images[product.imageIndex]} 
+                    alt={`${product.title} - Image ${product.imageIndex + 1}`}
+                    className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  
+                  {/* Navigation buttons */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      prevImage(product);
+                    }}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+                  >
+                    <ChevronLeft className="w-4 h-4 text-gray-700" />
+                  </button>
+                  
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      nextImage(product);
+                    }}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity hover:bg-white"
+                  >
+                    <ChevronRight className="w-4 h-4 text-gray-700" />
+                  </button>
+                  
+                  {/* Image indicators */}
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex space-x-2">
+                    {product.images.map((_, idx) => (
+                      <button
+                        key={idx}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          product.setImageIndex(idx);
+                        }}
+                        className={`w-2 h-2 rounded-full transition-colors ${
+                          idx === product.imageIndex ? 'bg-white' : 'bg-white/50'
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
+                
                 <div className="absolute top-4 left-4">
                   <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
                     <product.icon className="w-6 h-6 text-blue-600" />
