@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X, LockKeyhole  } from 'lucide-react';
 import { scrollToSection } from '@/utils/scrollUtils';
 
 const Navigation = () => {
@@ -31,7 +31,7 @@ const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
-              <Shield className="w-4 h-4 text-white" />
+              <LockKeyhole className="w-4 h-4 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900">Yatigo</span>
           </div>
