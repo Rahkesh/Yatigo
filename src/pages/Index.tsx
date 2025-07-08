@@ -8,6 +8,7 @@ import Features from '@/components/Features';
 import LocationMap from '@/components/LocationMap';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
+import ContactIcons from '@/components/ContactIcons';
 
 const Index = () => {
   return (
@@ -28,6 +29,7 @@ const Index = () => {
         </div>
       </main>
       <Footer />
+      <ContactIcons />
     </div>
   );
 };
