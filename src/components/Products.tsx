@@ -31,9 +31,9 @@ const Products = () => {
       icon: ShoppingBag,
       features: ['Multiple Sizes', 'CCTV Surveillance', '24/7 Access'],
       images: [
-        'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1570129477492-45c003edd2be?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+        '/lovable-uploads/b2972268-cc05-4c61-b359-d9f7bd21e7d3.png',
+        '/lovable-uploads/06e25c52-5eb1-42ec-94b6-3a2c7e5d434c.png',
+        '/lovable-uploads/e86ec22a-57fd-4f6d-8023-d7138a62dff5.png'
       ],
       imageIndex: baggageImageIndex,
       setImageIndex: setBaggageImageIndex
