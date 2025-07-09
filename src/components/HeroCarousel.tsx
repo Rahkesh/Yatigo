@@ -1,18 +1,7 @@
-'use client';
 
 import React from 'react';
-import useEmblaCarousel from 'embla-carousel-react';
-import Autoplay from 'embla-carousel-autoplay';
-import type { OptionsType } from 'embla-carousel-autoplay';
-
 import { Button } from '@/components/ui/button';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious
-} from '@/components/ui/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import { MapPin, Phone } from 'lucide-react';
 import { scrollToSection, initiateCall } from '@/utils/scrollUtils';
 
@@ -48,24 +37,22 @@ const HeroCarousel = () => {
     }
   ];
 
-  const autoplayOptions: Partial<OptionsType> = {
-    delay: 2000,
-    stopOnInteraction: false,
-    stopOnMouseEnter: true
+  const handleLocateUs = () => {
+    scrollToSection('locations');
   };
 
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)]);
-
-  const handleLocateUs = () => scrollToSection('locations');
-  const handleContactUs = () => initiateCall('+919876543210');
+  const handleContactUs = () => {
+    initiateCall('+919876543210');
+  };
 
   return (
     <div className="relative w-full max-w-6xl mx-auto">
       <Carousel className="w-full" opts={{ align: "start", loop: true }}>
-        <CarouselContent ref={emblaRef}>
+        <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
               <div className="relative bg-gradient-to-br from-pink-50 to-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+                {/* Content Section */}
                 <div className="grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
                   {/* Text Content */}
                   <div className="flex flex-col justify-center space-y-6">
@@ -79,19 +66,19 @@ const HeroCarousel = () => {
                         {slide.description}
                       </p>
                     </div>
-
+                    
                     <div className="flex flex-col sm:flex-row gap-4">
-                      <Button
-                        size="lg"
+                      <Button 
+                        size="lg" 
                         onClick={handleLocateUs}
                         className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-xl"
                       >
                         <MapPin className="mr-2 h-5 w-5" />
                         Find Locations
                       </Button>
-                      <Button
-                        size="lg"
-                        variant="outline"
+                      <Button 
+                        size="lg" 
+                        variant="outline" 
                         onClick={handleContactUs}
                         className="border-2 border-pink-200 text-pink-600 hover:bg-pink-50 px-6 py-3 rounded-xl"
                       >
@@ -103,19 +90,17 @@ const HeroCarousel = () => {
 
                   {/* Image Section */}
                   <div className="relative">
-                    <img
+                    <img 
                       src={slide.image}
                       alt={slide.alt}
                       className="w-full h-80 lg:h-96 object-cover rounded-xl shadow-lg"
                     />
-
+                    
                     {/* Locker Overlay Badge */}
                     <div className="absolute top-4 right-4 bg-white/95 backdrop-blur-sm rounded-xl p-3 shadow-md">
                       <div className="flex items-center space-x-2">
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                        <span className="text-sm font-medium text-gray-900">
-                          Smart Lockers Available
-                        </span>
+                        <span className="text-sm font-medium text-gray-900">Smart Lockers Available</span>
                       </div>
                     </div>
                   </div>
@@ -124,11 +109,13 @@ const HeroCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-
+        
+        {/* Navigation */}
         <CarouselPrevious className="left-4" />
         <CarouselNext className="right-4" />
       </Carousel>
-
+      
+      {/* Slide Indicators */}
       <div className="flex justify-center mt-6 space-x-2">
         {slides.map((_, index) => (
           <div
