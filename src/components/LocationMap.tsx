@@ -39,7 +39,7 @@ const LocationMap = () => {
           <div className="relative">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <img 
-                src="https://sdmntprwestus2.oaiusercontent.com/files/00000000-ed04-61f8-8931-86523c4da8ce/raw?se=2025-07-09T10%3A46%3A37Z&sp=r&sv=2024-08-04&sr=b&scid=da445804-b370-5bd5-bd86-2486ffd1b8cd&skoid=f28c0102-4d9d-4950-baf0-4a8e5f6cf9d4&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-07-08T20%3A49%3A54Z&ske=2025-07-09T20%3A49%3A54Z&sks=b&skv=2024-08-04&sig=X3n/R2jB7WAxKADAMWf8oafblGDoF%2BxoUJPi8sHKqYE%3D" 
+                src="https://res.cloudinary.com/djuq4h8lm/image/upload/v1752066688/ChatGPT_20Image_20Jul_209_2C_202025_20at_2008_46_54_20AM_jcouub.png" 
                 alt="Smart Locker Network - Storage Facility Locations" 
                 className="w-full h-80 object-cover rounded-xl"
               />
