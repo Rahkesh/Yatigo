@@ -1,20 +1,19 @@
-
 import React from 'react';
 import { MessageCircle } from 'lucide-react';
 import { openExternalLink, initiateCall } from '@/utils/scrollUtils';
 
 const ContactIcons = () => {
   const handleWhatsAppClick = () => {
-    // WhatsApp business number - replace with actual number
-    const phoneNumber = '919876543210';
+    // WhatsApp business number - updated to new number
+    const phoneNumber = '917598840724';
     const message = 'Hello! I am interested in your smart locker services.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     openExternalLink(whatsappUrl);
   };
 
   const handleMessageClick = () => {
-    // For now, this will initiate a call - you can change this to open a contact form
-    initiateCall('+919876543210');
+    // Updated to new phone number
+    initiateCall('+917598840724');
   };
 
   return (

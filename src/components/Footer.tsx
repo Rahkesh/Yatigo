@@ -23,7 +23,7 @@ const Footer = () => {
 
   const handleLinkClick = (href: string) => {
     if (href === 'contact') {
-      initiateCall('+919876543210');
+      initiateCall('+917598840724');
     } else if (href === 'privacy') {
       // For now, scroll to FAQ section as placeholder
       scrollToSection('faq');
@@ -33,7 +33,7 @@ const Footer = () => {
   };
 
   const handlePhoneClick = () => {
-    initiateCall('+919876543210');
+    initiateCall('+917598840724');
   };
 
   const handleEmailClick = () => {
@@ -63,7 +63,7 @@ const Footer = () => {
                 className="flex items-center space-x-3 hover:text-pink-600 transition-colors"
               >
                 <Phone className="w-4 h-4 text-pink-600" />
-                <span className="text-gray-600 text-sm">+91 98765 43210</span>
+                <span className="text-gray-600 text-sm">+91 75988 40724</span>
               </button>
               <button 
                 onClick={handleEmailClick}
