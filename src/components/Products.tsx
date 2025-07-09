@@ -124,7 +124,7 @@ const Products = () => {
                 
                 <div className="absolute top-4 left-4">
                   <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                    <product.icon className="w-6 h-6 text-blue-600" />
+                    <product.icon className="w-6 h-6 text-pink-600" />
                   </div>
                 </div>
               </div>
@@ -136,7 +136,7 @@ const Products = () => {
                 <div className="space-y-3 mb-8">
                   {product.features.map((feature, idx) => (
                     <div key={idx} className="flex items-center space-x-3">
-                      <Shield className="w-4 h-4 text-blue-500" />
+                      <Shield className="w-4 h-4 text-pink-500" />
                       <span className="text-gray-700">{feature}</span>
                     </div>
                   ))}
@@ -144,7 +144,7 @@ const Products = () => {
                 
                 <Button 
                   onClick={() => handleLearnMore(product.id)}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 group"
+                  className="w-full bg-pink-600 hover:bg-pink-700 text-white rounded-xl py-3 group"
                 >
                   Learn More
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />

@@ -37,7 +37,7 @@ const ContactIcons = () => {
       {/* Message Icon */}
       <button
         onClick={handleMessageClick}
-        className="w-14 h-14 bg-blue-500 hover:bg-blue-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
+        className="w-14 h-14 bg-pink-500 hover:bg-pink-600 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110"
         title="Send Message"
       >
         <MessageCircle className="w-7 h-7" />

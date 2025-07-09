@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Shield, MapPin, Phone, Mail } from 'lucide-react';
 import { scrollToSection, initiateCall, initiateEmail, openExternalLink } from '@/utils/scrollUtils';
@@ -6,8 +7,7 @@ const Footer = () => {
   const footerLinks = {
     Products: [
       { name: 'Mobile Lockers', href: 'products' },
-      { name: 'Baggage Lockers', href: 'products' },
-      { name: 'Pricing', href: 'features' }
+      { name: 'Baggage Lockers', href: 'products' }
     ],
     Company: [
       { name: 'Home', href: 'hero' },
@@ -47,7 +47,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-1">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-gradient-to-br from-pink-600 to-pink-700 rounded-xl flex items-center justify-center">
                 <Shield className="w-5 h-5 text-white" />
               </div>
               <span className="text-2xl font-bold text-gray-900">Yatigo</span>
@@ -60,16 +60,16 @@ const Footer = () => {
             <div className="space-y-3">
               <button 
                 onClick={handlePhoneClick}
-                className="flex items-center space-x-3 hover:text-blue-600 transition-colors"
+                className="flex items-center space-x-3 hover:text-pink-600 transition-colors"
               >
-                <Phone className="w-4 h-4 text-blue-600" />
+                <Phone className="w-4 h-4 text-pink-600" />
                 <span className="text-gray-600 text-sm">+91 98765 43210</span>
               </button>
               <button 
                 onClick={handleEmailClick}
-                className="flex items-center space-x-3 hover:text-blue-600 transition-colors"
+                className="flex items-center space-x-3 hover:text-pink-600 transition-colors"
               >
-                <Mail className="w-4 h-4 text-blue-600" />
+                <Mail className="w-4 h-4 text-pink-600" />
                 <span className="text-gray-600 text-sm">hello@yatigo.in</span>
               </button>
             </div>
@@ -84,7 +84,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <button 
                       onClick={() => handleLinkClick(link.href)}
-                      className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                      className="text-gray-600 hover:text-pink-600 transition-colors text-sm text-left"
                     >
                       {link.name}
                     </button>

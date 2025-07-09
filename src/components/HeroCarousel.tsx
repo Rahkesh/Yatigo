@@ -51,7 +51,7 @@ const HeroCarousel = () => {
         <CarouselContent>
           {slides.map((slide, index) => (
             <CarouselItem key={index}>
-              <div className="relative bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+              <div className="relative bg-gradient-to-br from-pink-50 to-gray-50 rounded-2xl overflow-hidden shadow-lg border border-gray-100">
                 {/* Content Section */}
                 <div className="grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
                   {/* Text Content */}
@@ -60,7 +60,7 @@ const HeroCarousel = () => {
                       <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                         {slide.title}
                         <br />
-                        <span className="text-blue-600">{slide.subtitle}</span>
+                        <span className="text-pink-600">{slide.subtitle}</span>
                       </h2>
                       <p className="text-lg text-gray-600 leading-relaxed">
                         {slide.description}
@@ -71,7 +71,7 @@ const HeroCarousel = () => {
                       <Button 
                         size="lg" 
                         onClick={handleLocateUs}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl"
+                        className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-xl"
                       >
                         <MapPin className="mr-2 h-5 w-5" />
                         Find Locations
@@ -80,7 +80,7 @@ const HeroCarousel = () => {
                         size="lg" 
                         variant="outline" 
                         onClick={handleContactUs}
-                        className="border-2 border-blue-200 text-blue-600 hover:bg-blue-50 px-6 py-3 rounded-xl"
+                        className="border-2 border-pink-200 text-pink-600 hover:bg-pink-50 px-6 py-3 rounded-xl"
                       >
                         <Phone className="mr-2 h-5 w-5" />
                         Contact Us

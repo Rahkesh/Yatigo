@@ -46,8 +46,8 @@ const Features = () => {
               className="group hover:shadow-lg transition-all duration-300 border border-gray-100 rounded-2xl bg-white text-center p-6"
             >
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-100 transition-colors">
-                  <feature.icon className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-pink-50 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-pink-100 transition-colors">
+                  <feature.icon className="w-8 h-8 text-pink-600" />
                 </div>
                 
                 <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>

@@ -11,7 +11,6 @@ const Navigation = () => {
     { name: 'Home', href: 'hero' },
     { name: 'Mobile Lockers', href: 'products' },
     { name: 'Baggage Lockers', href: 'products' },
-    { name: 'Pricing', href: 'features' },
     { name: 'Locate Us', href: 'locations' },
     { name: 'Contact', href: 'contact' },
   ];
@@ -30,7 +29,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-blue-700 rounded-lg flex items-center justify-center">
+            <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-lg flex items-center justify-center">
               <LockKeyhole className="w-4 h-4 text-white" />
             </div>
             <span className="text-xl font-bold text-gray-900">Yatigo</span>
@@ -52,7 +51,7 @@ const Navigation = () => {
           <div className="hidden md:flex">
             <Button 
               onClick={handleGetStarted}
-              className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg px-6"
+              className="bg-pink-600 hover:bg-pink-700 text-white rounded-lg px-6"
             >
               Get Started
             </Button>
@@ -83,7 +82,7 @@ const Navigation = () => {
               <div className="pt-4 border-t border-gray-100">
                 <Button 
                   onClick={handleGetStarted}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-2"
+                  className="w-full bg-pink-600 hover:bg-pink-700 text-white rounded-lg py-2"
                 >
                   Get Started
                 </Button>
