@@ -43,8 +43,8 @@ const About = () => {
             <div className="grid sm:grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <div key={index} className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <feature.icon className="w-6 h-6 text-blue-600" />
+                  <div className="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <feature.icon className="w-6 h-6 text-pink-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-2">{feature.title}</h3>
@@ -57,9 +57,9 @@ const About = () => {
 
           {/* Image */}
           <div className="relative">
-            <div className="bg-gradient-to-br from-blue-50 to-gray-50 rounded-2xl p-8">
+            <div className="bg-gradient-to-br from-pink-50 to-gray-50 rounded-2xl p-8">
               <img 
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80 " 
                 alt="Smart Locker Facility - Secure Storage Systems" 
                 className="w-full h-auto rounded-xl shadow-lg"
               />
@@ -68,7 +68,7 @@ const About = () => {
             {/* Floating Stats */}
             <div className="absolute -top-6 -right-6 bg-white rounded-2xl p-6 shadow-xl border border-gray-100">
               <div className="text-center">
-                <div className="text-2xl font-bold text-blue-600">100+</div>
+                <div className="text-2xl font-bold text-pink-600">100+</div>
                 <div className="text-sm text-gray-600">Active Locations</div>
               </div>
             </div>

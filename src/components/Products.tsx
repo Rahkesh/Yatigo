@@ -17,9 +17,9 @@ const Products = () => {
       icon: Smartphone,
       features: ['Smart Charging', 'Biometric Access', 'Real-time Monitoring'],
       images: [
-        'https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
-        'https://images.unsplash.com/photo-1577563908411-5077b6dc7624?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'
+        'https://cdn11.bigcommerce.com/s-3ihov9f/images/stencil/1280x1280/products/34225/110502/us%2FLHJSJCCJLHJ36VYP6V0%2Foriginal_img-v5%2Fcell-phone-locker-m100-1.1__92466.1672914015.jpg?c=2',
+        'https://www.pagertec.com/cdn/shop/products/Mock_Mia8.jpg?v=1671733043',
+        'https://www.pagertec.com/cdn/shop/products/Mock_Cubby.jpg?v=1676496134'
       ],
       imageIndex: mobileImageIndex,
       setImageIndex: setMobileImageIndex

@@ -11,10 +11,9 @@ const ContactIcons = () => {
     openExternalLink(whatsappUrl);
   };
 
-  const handleMessageClick = () => {
-    // Updated to new phone number
-    initiateCall('+917598840724');
-  };
+   const handleMessageClick = () => {
+   window.location.href = 'sms:+917598840724?body=Hello, I am interested in your services.';
+ };
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">

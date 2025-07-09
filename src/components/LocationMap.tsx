@@ -39,7 +39,7 @@ const LocationMap = () => {
           <div className="relative">
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <img 
-                src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                src="https://files08.oaiusercontent.com/file-Tz4uhddTE1UUDoeydMsH8J?se=2025-07-09T09%3A25%3A05Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D299%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3DChatGPT%2520Image%2520Jul%25209%252C%25202025%2520at%252008_46_54%2520AM.png&sig=veoisVT1Lk0DEH7KKggyWqbRd4hfoYsX7Os3ByD1%2BJQ%3D" 
                 alt="Smart Locker Network - Storage Facility Locations" 
                 className="w-full h-80 object-cover rounded-xl"
               />
@@ -48,7 +48,7 @@ const LocationMap = () => {
               <div className="absolute top-8 right-8 space-y-3">
                 <Button 
                   onClick={handleOpenGoogleMaps}
-                  className="bg-blue-600 hover:bg-blue-700 text-white rounded-xl shadow-lg"
+                  className="bg-pink-600 hover:bg-pink-700 text-white rounded-xl shadow-lg"
                 >
                   <ExternalLink className="mr-2 h-4 w-4" />
                   View on Maps
@@ -64,8 +64,8 @@ const LocationMap = () => {
                 <div key={index} className="bg-white rounded-xl p-6 shadow-md border border-gray-100 hover:shadow-lg transition-shadow">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-blue-600" />
+                      <div className="w-12 h-12 bg-pink-50 rounded-xl flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-pink-600" />
                       </div>
                       <div>
                         <h3 className="font-semibold text-gray-900">{location.city}</h3>
@@ -84,7 +84,7 @@ const LocationMap = () => {
             <div className="pt-6 space-y-4">
               <Button 
                 onClick={handleGetDirections}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3"
+                className="w-full bg-pink-600 hover:bg-pink-700 text-white rounded-xl py-3"
               >
                 <Navigation className="mr-2 h-5 w-5" />
                 Get Directions to Nearest Locker
