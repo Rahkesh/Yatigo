@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, LockKeyhole  } from 'lucide-react';
+import { Menu, X, LockKeyhole } from 'lucide-react';
 import { scrollToSection } from '@/utils/scrollUtils';
 
 const Navigation = () => {
@@ -29,10 +29,12 @@ const Navigation = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-gradient-to-br from-pink-600 to-pink-700 rounded-lg flex items-center justify-center">
-              <LockKeyhole className="w-4 h-4 text-white" />
-            </div>
-            <span className="text-xl font-bold text-gray-900">Yatigo</span>
+            
+            <img
+              src="/Logo.png"
+              alt="Yatigo Logo"
+              className="w-32 h-32 object-contain"
+            />
           </div>
 
           {/* Desktop Navigation */}
@@ -49,7 +51,7 @@ const Navigation = () => {
           </div>
 
           <div className="hidden md:flex">
-            <Button 
+            <Button
               onClick={handleGetStarted}
               className="bg-pink-600 hover:bg-pink-700 text-white rounded-lg px-6"
             >
@@ -80,7 +82,7 @@ const Navigation = () => {
                 </button>
               ))}
               <div className="pt-4 border-t border-gray-100">
-                <Button 
+                <Button
                   onClick={handleGetStarted}
                   className="w-full bg-pink-600 hover:bg-pink-700 text-white rounded-lg py-2"
                 >

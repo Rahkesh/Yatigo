@@ -1,0 +1,4 @@
+name = "yatigo"
+compatibility_date = "2025-07-30"
+
+pages_build_output_dir = "./dist"
